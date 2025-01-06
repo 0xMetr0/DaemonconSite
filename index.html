@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML Meta Tags -->
+    <title>DaemonCon</title>
+    <meta name="description" content="Chicago's most devilish cybersecurity convention">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://trailanomaly.baby">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DaemonCon">
+    <meta property="og:description" content="Chicago's most devilish cybersecurity convention">
+    <meta property="og:image" content="images/DaemonHead.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="trailanomaly.baby">
+    <meta property="twitter:url" content="https://trailanomaly.baby">
+    <meta name="twitter:title" content="DaemonCon">
+    <meta name="twitter:description" content="Chicago's most devilish cybersecurity convention">
+    <meta name="twitter:image" content="images/DaemonHead.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/5093747850432784/styles.css">
+    <script src="scripts/30903483864923958/script.js" defer></script>
+    <title>DaemonCon</title>
+</head>
+<body>
+    <!-- BootScreen -->
+    <div id="boot-screen">
+        <img id="boot-logo" src="images/asciiDaemon.png" alt="DaemonCon Logo">
+        <img id="boot-logo" src="images/asciitextdae.png" alt="DaemonCon Text">
+        <pre id="boot-text"></pre>
+    </div>
+    <!-- Desktop -->
+    <div id="desktop">
+        <div class="grid">
+            <div class="grid-lines"></div>
+        </div>
+        <div class="grid-mask"></div>
+        <div class="crt"></div>
+        <div class="icon" style="top: 20px; left: 20px;" onclick="openWindow('about')">
+            <img src="gifs/RotGlobeAnim.gif?v=1" alt="About Icon">
+            ReadMe.md
+        </div>
+        <div class="icon" style="top: 120px; left: 20px;" onclick="openWindow('schedule')">
+            <img src="gifs/school_calendar.gif?v=1" alt="Schedule Icon">
+            MySchedule.txt
+        </div>
+        <div class="icon" style="top: 220px; left: 20px;" onclick="openWindow('workshops')">
+            <img src="gifs/toolsbtn.gif?v=1" alt="Workshops Icon">
+            Workshop.cfg
+        </div>
+        <div class="icon" style="top: 320px; left: 20px;" onclick="openWindow('addressBook')">
+            <img src="gifs/gbook.gif?v=1" alt="Address Book">
+            AddressBook.exe
+        </div>
+        <div class="icon" style="top: 20px; left: 120px;" onclick="openWindow('register')">
+            <img src="gifs/register.gif?v=1" alt="Registration GIF">
+            REGISTER.DIT
+        </div>
+        <div class="icon" style="top: 120px; left: 120px;" onclick="openWindow('faq')">
+            <img src="gifs/faq.gif?v=1" alt="FAQ Icon">
+            FAQ.json
+        </div>
+        <div class="icon" style="top: 220px; left: 120px;" onclick="openWindow('sponsors')">
+            <img src="gifs/Dollar.gif?v=1" alt="FAQ Icon">
+            Sponsors.wsf
+        </div>
+        <div class="icon" style="top: 20px; left: 220px;" onclick="openWindow('solitaire')">
+            <img src="gifs/cards.gif?v=1" alt="Solitaire Icon">
+            Solitaire.exe
+        </div>
+        <!-- Windows -->
+        <!-- About -->
+        <div id="aboutWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">About DaemonCon</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('about')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('about')">□</div>
+                    <div class="window-control" onclick="closeWindow('about')">×</div>
+                </div>
+            </div>
+            <!-- About Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- About Content -->
+            <div class="window-content">
+                <h1><img src="images/DaemonHead.png" alt="DaemonCon Icon" class="about-icon" width="50" height="50">DaemonCon<img src="images/DaemonHead.png" alt="DaemonCon Icon" class="about-icon" width="50" height="50"></h1>
+                <h2>Inspire Your Inner Hacker</h2>
+                <p>Join us for the most devilish cybersecurity convention of the year! DaemonCon brings together the brightest minds in Chicago and abroad to explore the latest trends, threats, and innovations in the world of digital security.<br></p>
+
+                <h3>Date and Venue</h3>
+                <p>January 26th, 2025<br> 10:00 AM - 6:00 PM <br> DePaul's Jarvis Student Center<br>1 East Jackson, Chicago, IL</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><span style="cursor: pointer; text-decoration: underline; color:#000080;" onclick="openWindow('schedule')">Conference Track</span> - Unrecorded talks on offensive/defensive security, engineering research, and ideas.</li>
+                    <li><span style="cursor: pointer; text-decoration: underline; color:#000080;" onclick="openWindow('workshops')">Workshops</span> - Hands-on guided labs.</li>
+                    <li>CTF - Participate in our CTF challenge for fun prizes!</li>
+                    <li>After Party - Elephant and Castle 111 W Adams St. (Sponsored by Wolf Point Security)</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Schedule -->
+        <div id="scheduleWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Schedule & Chaos v4.3.2</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('schedule')">_</div>
+                    <div class="window-control" onclick="maximizeWindow('schedule')">□</div>
+                    <div class="window-control" onclick="closeWindow('schedule')">×</div>
+                </div>
+            </div>
+            <!-- Schedule Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="appointments"><span class="menu-text"><u>A</u>ppointments</span><div class="dropdown-menu"><div class="menu-option">Add <u>A</u>ppointment Item</div><div class="menu-separator"></div><div class="menu-option">Delete Appointment Item(s)</div><div class="menu-option">Item Properties...</div><div class="menu-option">Item <u>N</u>otes...</div><div class="menu-option has-submenu">Print<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">XXXXXXX</div></div></div><div class="menu-option has-submenu">Item(s) Color<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">XXXXXXX</div></div></div><div class="menu-option">Item Dial</div><div class="menu-separator"></div><div class="menu-option">Grid Lines</div><div class="menu-option"><u>Z</u>oom</div><div class="menu-option"><u>S</u>earch & Report</div><div class="menu-option has-submenu"><u>O</u>verlay<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">XXXXXXX</div></div></div></div></div>
+                <div class="menu-item" data-menu="calendar"><span class="menu-text"><u>C</u>alendar</span><div class="dropdown-menu"><div class="menu-option has-submenu">Previous Year <span class="submenu-arrow">F5</span></div><div class="menu-option has-submenu">Previous Month<span class="submenu-arrow">F6</span></div><div class="menu-option has-submenu">Today<span class="submenu-arrow">F4</span></div><div class="menu-option has-submenu">Next Month<span class="submenu-arrow">F8</span></div><div class="menu-option has-submenu">Next Year<span class="submenu-arrow">F9</span></div><div class="menu-separator"></div><div class="menu-option"><u>Z</u>oom</div><div class="menu-option">Leading/Trailing Dates</div><div class="menu-option has-submenu">Show Week Number<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">XXXXXXX</div></div></div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- Toolbar HTML -->
+            <div class="w95-toolbar">
+          
+                <!-- Calendar Buttons -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn">
+                        <img src="buttons/lleft.png" alt="LLeft">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/left.png" alt="Left">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/stop.png" alt="Stop">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/right.png" alt="Right">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/rright.png" alt="Far Right">
+                    </button>
+                </div>
+
+                <div class="toolbar-separator"></div>
+            
+                <div class="toolbar-group">
+                    <button class="toolbar-btn">
+                        <img src="buttons/point.png" alt="Point">
+                    </button>
+                </div>
+
+                <div class="toolbar-separator"></div>
+            
+                <div class="toolbar-group">
+                    <button class="toolbar-btn">
+                        <img src="buttons/12.png" alt="Journal">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/notepad.png" alt="Notepad">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/phone.png" alt="Phone">
+                    </button>
+                </div>
+
+                <div class="toolbar-separator"></div>
+            
+                <div class="toolbar-group">
+                    <button class="toolbar-btn">
+                        <img src="buttons/bino.png" alt="Binoculars">
+                    </button>
+                </div>
+
+                <div class="toolbar-separator"></div>
+            
+                <div class="toolbar-group">
+                    <button class="toolbar-btn">
+                        <img src="buttons/person.png" alt="Person">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/note.png" alt="Mail">
+                    </button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/network.png" alt="Network">
+                    </button>
+                </div>
+                <div class="toolbar-separator"></div>
+            
+                <div class="toolbar-group">
+                    <button class="toolbar-btn"><img src="buttons/q.png" alt="Question Mark"></button>
+                    <button class="toolbar-btn">
+                        <img src="buttons/hand.png" alt="Hand">
+                    </button>
+                </div>
+            </div>
+            <!-- Schedule Content -->
+            <div class="window-content">
+                <!-- Calendar Section -->
+                <div style="border: 1px solid #808080; flex-grow: 10px; background: #c0c0c0; min-width: 300px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 12px;">Day Number 26</span>
+                        <select style="border: 1px solid #808080; padding: 2px; background: white;">
+                            <option>January</option>
+                        </select>
+                        <div style="display: flex; align-items: center;">
+                            <input type="text" value="2025" style="width: 50px; border: 1px solid #808080; padding: 2px;">
+                            <div style="display: flex; flex-direction: column; margin-left: 2px;">
+                                <button style="height: 10px; font-size: 8px; padding: 0 2px;">▲</button>
+                                <button style="height: 10px; font-size: 8px; padding: 0 2px;">▼</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table style="width: 100%; border-collapse: collapse; background: white;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">S</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">M</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">T</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">W</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">T</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">F</th>
+                                <th style="border: 1px solid #808080; padding: 4px; background: #d4d0c8; font-size: 12px;">S</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;"></td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;"></td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;"></td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">1</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">2</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">3</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">5</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">6</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">7</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">8</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">10</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">10</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">11</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">12</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">13</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">14</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">15</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">16</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">17</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">18</td>
+                            </tr>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">19</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">20</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">21</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">22</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">23</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">24</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">25</td>
+                            </tr>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center; background: #000080; color: white;">26</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">27</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">28</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">29</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">30</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;">31</td>
+                                <td style="border: 1px solid #808080; padding: 4px; text-align: center;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Appointments Section -->
+                <div style="border: 1px solid #808080; flex-grow: 1; background: #c0c0c0; max-width: 400px; max-height: 410px;">
+                    <div style="padding: 4px; border-bottom: 1px solid #808080; font-size: 12px;">
+                        Appointments for Jan 26, 2025
+                    </div>
+                    <div style="display: flex; height: calc(100% - 25px); background: white;">
+                        <div style="display: flex; border-right: 1px solid #808080;">
+                            <div style="width: 80px; font-size: 12px;">
+                                <div style="padding: 4px; background: #d4d0c8; border-bottom: 1px solid #808080; font-size: 12px;">Event Time</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">10:00 AM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">10:30 AM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">11:00 AM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">12:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">01:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">02:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">03:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">03:30 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">04:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">04:30 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">05:00 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">06:30 PM</div>
+                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">07:00 PM</div>
+                            </div>
+                        </div>
+                        <!-- Description column -->
+                        <div style="flex-grow: 1; font-size: 12px;">
+                            <div style="padding: 4px; background: #d4d0c8; border-bottom: 1px solid #808080; font-size: 12px;">Description</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Registration</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Welcome</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Keynote</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Lunch</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 1 - TBD</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Industry Panel Discussion</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 2 - TBD</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 3 - TBD</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 4 - TBD</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 5 - TBD</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Hacker Jeopardy</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Closing Remarks</div>
+                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">After Party</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- DEI Statement -->
+        <div id="deistatementWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">DEI Statement</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('deistatement')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('deistatement')">□</div>
+                    <div class="window-control" onclick="closeWindow('deistatement')">×</div>
+                </div>
+            </div>
+            <!-- DEI Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- DEI Content -->
+            <div class="window-content">
+                <h1>DEI Statement</h1>
+                <p>
+                        Diversity, Equity, and Inclusion are integral to our mission and our everyday lives. Diversity includes characteristics of ethnicity, gender identity, sexual orientation, age, religion, abilities, socioeconomic background, and veteran status, in addition to differences in backgrounds, experiences, values, beliefs and ideas. Embracing our differences makes us better leaders, students, researchers, educators, and individuals. These values are intertwined within our practices, events, and outreach.<br><br>
+                    Equity is intrinsic to the Security Daemons as we provide fair and equal access to opportunities and resources for all our members. In sustaining and building an atmosphere where equity and respect are prioritized, we create a caring and successful team where we attract and retain people that are passionate about cybersecurity and feel comfortable contributing their unique skills, ideas, perspectives, and experiences.<br><br>
+                    Inclusivity requires mutual respect, acknowledgement, and acceptance of our differences. Being inclusive enables us to draw out our strengths as researchers, learners, and students to unify as one cohesive body. As our values and mission are intertwined, we foster a community where every member of the Security Daemons feels supported and inspired in our common pursuit of security.
+                </p>
+            </div>
+        </div>
+        <!-- Land Acknowledgement -->
+        <div id="landackWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Land Acknowledgement</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('landack')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('landack')">□</div>
+                    <div class="window-control" onclick="closeWindow('landack')">×</div>
+                </div>
+            </div>
+            <!-- Land Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- Land Content -->
+            <div class="window-content">
+                <h1>Land Acknowledgement</h1>
+                <p>
+                    We recognize that the work of the Security Daemons takes place on Indigenous lands and in Indigenous spaces that over 100 tribal nations call home. 
+                    Our organization resides on the ancestral lands of the Potawatomi, Ojibew, and Odawa nations who signed the Treaty of Chicago in 1821 and in 1833. 
+                    We extend our respect to all of them, including the Ho-Chunk, Myaamia, Menominee, Illinois Confederacy, and Peoria people who also maintained relationships with this land. 
+                    In the spirt of Saint Vincent de Paul, we reaffirm our commitment to help make our community a more equitable space for all. 
+                </p>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <div id="faqWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Frequently Asked Questions</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('faq')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('faq')">□</div>
+                    <div class="window-control" onclick="closeWindow('faq')">×</div>
+                </div>
+            </div>
+            <!-- FAQ Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- FAQ Content -->
+            <div class="window-content">
+                <h1><img src="gifs/Question-mark.gif?v=1" alt="FAQ Icon" class="about-icon" width="50" height="50">FAQ<img src="gifs/Question-mark.gif?v=1" alt="FAQ Icon" class="about-icon" width="50" height="50"></h1>
+                <h3>What is Daemoncon?</h3>
+                <p>The DePaul DaemonCon cybersecurity conference brings together the brightest minds in Chicago and abroad to explore the latest trends, threats, and innovations in the world of digital security.</p>
+                <h3>How many people typically attend DaemonCon?</h3>
+                <p>Around 110-150 people.</p>
+                <h3>When does attendee registration start?</h3>
+                <p>Attendee registration is currently available <a href="https://forms.gle/3BaioGh6ZnqUgZSo6" target="_blank">here</a>.</p>
+                <h3>Is the venue wheelchair accessible?</h3>
+                <p>The conference venue is wheelchair accessible. However, the after-party is not.</p>
+                <h3>Can attendees under 21 still attend the after-party?</h3>
+                <p>Yes, anyone is welcome to come to the after-party. Individuals will need to show an ID to purchase alcohol.</p>
+                <h3>I'd like to speak, run a workshop, or start a village. How do I do that?</h3>
+                <p>You can register with the link <a href="https://forms.gle/sijgD62rgUwsrDj18" target="_blank">here</a>!</p>
+                <h3>How much is a booth?</h3>
+                <p>These requests are handled on a case-by-case basis. If you are interested in a booth, direct inquiries to <a href="mailto:secdaemons@depaul.edu">secdaemons@depaul.edu</a>.</p>
+                <h3>I want to sell stuff, how do I do this?</h3>
+                <p>Similar to booths, we process these requests on a case-by-case basis. Please direct your inquiries to <a href="mailto:secdaemons@depaul.edu">secdaemons@depaul.edu</a>.</p>
+                <h3>How can I help out?</h3>
+                <p>If you are a student and want to volunteer to help us run this, a form will be posted to our Discord, so keep a lookout!</p>
+                <h3>How do I access the internet at DaemonCon?</h3>
+                <p>University students can use their eduroam login to connect to the schools WiFi. Other guests can use DePaul's guest WiFi.</p>
+            </div>
+        </div>
+        <!-- Workshop -->
+        <div id="workshopsWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Workshops and Villages</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('workshops')">_</div>
+                    <div class="window-control" onclick="maximizeWindow('workshops')">□</div>
+                    <div class="window-control" onclick="closeWindow('workshops')">×</div>
+                </div>
+            </div>
+            <!-- Workshop Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- Workshop Content -->
+            <div class="window-content win95-container">
+                <div class="tab-header">
+                    <button class="tab-button" data-tab="lockpicking">Lockpicking Village</button>
+                    <button class="tab-button" data-tab="wifi-hacking">Wifi Hacking</button>
+                    <button class="tab-button" data-tab="hardware-hacking">Hardware Hacking</button>
+                </div>                
+                <div class="tab-content-container">
+                    <!-- Lockpicking Village -->
+                    <div id="lockpicking" class="tab-content active">
+                        <div class="content-layout">
+                            
+        
+                            <div class="text-container">
+                                <h1><img src="gifs/lock.gif?v=1" alt="Lock Icon" class="workshop-icon" width="50" height="50">Lockpicking Village<img src="gifs/lockinglock.gif?v=1" alt="Lockpicking Icon" class="workshop-icon" width="65" height="50"></h1>
+                                <p><strong>Location:</strong> TBD</p>
+                                <p><strong>Operator:</strong> TBD</p>
+                                <p><strong>Duration:</strong> 2 hours</p>
+                                <p><strong>Description:</strong> Learn the art of lockpicking in our hands-on village. Explore various lock mechanisms and techniques used by security professionals.</p>
+                                <p><strong>Tools provided:</strong> Lock picks and practice locks</p>
+                                <p><strong>BYO Materials Needed:</strong> Laptops</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Wifi Hacking Village -->
+                    <div id="wifi-hacking" class="tab-content">
+                        <div class="content-layout">
+                            <div class="text-container">
+                                <h1><img src="gifs/wireless2.gif?v=1" alt="Wifi Hacking Icon" class="workshop-icon" width="50" height="50">Wifi Hacking Village<img src="gifs/wireless2.gif?v=1" alt="Wifi Hacking Icon" class="workshop-icon" width="50" height="50"></h1>
+                                <p><strong>Location:</strong> TBD</p>
+                                <p><strong>Operator:</strong> TBD</p>
+                                <p><strong>Duration:</strong> 3 hours</p>
+                                <p><strong>Description:</strong> Discover vulnerabilities in wireless networks and learn about securing Wi-Fi infrastructure in this interactive workshop.</p>
+                                <p><strong>Tools provided:</strong> Wireless Adapters</p>
+                                <p><strong>BYO Materials Needed:</strong> Laptops</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hardware Hacking Workshop -->
+                    <div id="hardware-hacking" class="tab-content">
+                        <div class="content-layout">
+                            <div class="text-container">
+                                <h1><img src="gifs/hardware.gif?v=1" alt="Hardware Hacking Icon" class="workshop-icon" width="50" height="50">Hardware Workshop<img src="gifs/tuxtype.gif?v=1" alt="Hardware Hacking Icon" class="workshop-icon" width="50" height="50"></h1>
+                                <p><strong>Location:</strong> TBD</p>
+                                <p><strong>Operator:</strong> TBD</p>
+                                <p><strong>Duration:</strong> 3 hours</p>
+                                <p><strong>Description:</strong> Get your hands dirty with circuit boards and microcontrollers. Learn to modify and secure hardware devices.</p>
+                                <p><strong>Tools provided:</strong> Soldering irons, microcontrollers, electronic components</p>
+                                <p><strong>BYO Materials Needed:</strong> Laptops</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Register -->
+        <div id="registerWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Register</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('register')">_</div>
+                    <div class="window-control" onclick="maximizeWindow('register')">□</div>
+                    <div class="window-control" onclick="closeWindow('register')">×</div>
+                </div>
+            </div>
+            <!-- Register Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- Register Content -->
+            <div class="window-content win95-container">
+                <div class="tab-header">
+                    <button class="tab-button" data-tab="attendeeregistration">Attendee Registration</button>
+                    <button class="tab-button" data-tab="callforpapers">Call for Papers</button>
+                    <button class="tab-button" data-tab="Sponsorapplication">Sponsor Application</button>
+                </div>
+                <div class="tab-content-container">
+                    <div id="attendeeregistration" class="tab-content active">
+                        <div class="content-layout">
+                            <div class="text-container">
+                                <div style="background-color: #000; color: #0f0; padding: 10px; margin-bottom: 20px; border: 2px solid #0f0;">
+                                    <h3 style="margin: 0; color: #0f0;">REGISTRATION NOW OPEN!</h3>
+                                    <p style="margin: 5px 0 0 0;"><a href="https://forms.gle/3BaioGh6ZnqUgZSo6" target="_blank">Join us</a> for a full day of hacking, learning, and connecting with the security community.</p>
+                                </div>
+                                <h1><img src="gifs/emailwolf.gif?v=1" alt="Attendee Registration Icon" class="workshop-icon">Attendee Registration<img src="gifs/emailwolf.gif?v=1" alt="Attendee Registration Icon" class="workshop-icon"></h1>
+                                <h3>Why Attend?</h3>
+                                <p>DaemonCon isn't just another security conference - it's your gateway to the cutting edge of cybersecurity. 
+                                Whether you're a seasoned professional or just starting your journey, you'll find valuable insights, hands-on experiences, and connections that last beyond the conference.</p>        
+                                <p>From advanced exploitation techniques to the latest in threat intelligence, our carefully curated talks and workshops are designed to level up your skills and expand your knowledge.</p>
+                                <h3>Event Details</h3>
+                                <p><img src="buttons/calendar.ico" alt="Calendar Icon" height="20" width="20"> Date: January 26th, 2024 <br> 
+                                    <img src="buttons/Alarm.ico" alt="Alarm Icon" height="20" width="20"> Time: 9:00 AM - 6:00 PM <br>
+                                    <img src="buttons/globe.ico" alt="Globe Icon" height="20" width="20"> Location: Daemon Technologies HQ <br>
+                                    <img src="buttons/card.ico" alt="Money Icon" height="20" width="20"> Cost: FREE!</p>
+                                <h3>What You Get</h3>
+                                <ul>
+                                    <li>Full access to all conference talks and panels</li>
+                                    <li>Complimentary lunch and refreshments</li>
+                                    <li>Networking opportunities with industry professionals</li>
+                                    <li>Access to the CTF competition</li>
+                                </ul>
+                                <h3>How to Register</h3>
+                                <p>Registration is quick and easy! Click the link below to secure your spot. Space is limited and registration will close once we reach capacity.</p>
+                                <h3><a href="https://forms.gle/3BaioGh6ZnqUgZSo6" target="_blank">Attendee Form</a></h3>
+                                <p>Questions about registration? Contact us at registration@daemoncon.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="callforpapers" class="tab-content">
+                        <div class="content-layout">
+                            <div class="text-container">
+                                <h1><img src="gifs/PC_work_female.gif?v=1" alt="Call for Papers Icon" class="workshop-icon">Call for Papers<img src="gifs/paul_pc.gif?v=1" alt="Call for Papers Icon" class="workshop-icon"></h1>
+                                <h3>Event Details</h3>
+                                <p>DaemonCon features a single-track format to maximize audience engagement and foster focused discussions. Each presentation runs between 20-50 minutes, including Q&A time.</p>    
+                                <h3>Topics of Interest</h3>
+                                <p>We welcome talks that explore any aspect of cybersecurity, from hands-on techniques to emerging threats. Key areas include:</p>
+                                <ul>
+                                    <li>Security Operations (Automation, Threat Intel, IR)</li>
+                                    <li>Offensive & Defensive Security</li>
+                                    <li>Application & Development Security</li>
+                                    <li>Infrastructure Security (ICS/SCADA, Aviation, Automotive)</li>
+                                    <li>Tool Development & Research</li>
+                                    <li>Personal Security Projects & Research</li>
+                                    <li>Emerging Technologies & Threats</li>
+                                </ul>    
+                                <p>Have an interesting security topic not listed? We encourage creative proposals that advance the field of cybersecurity.</p>
+                                <h3>Speaker Benefits</h3>
+                                <p>Selected speakers will receive:</p>
+                                <ul>    
+                                    <li>Complimentary DaemonCon speaker shirt</li>
+                                    <li>Exclusive speaker lanyard and badge</li>
+                                    <li>Networking opportunities with industry leaders</li>
+                                    <li>Full conference access</li>
+                                    <li>And yes, a firm handshake from our grateful organizers!</li>
+                                </ul>
+                                <h3>Important Dates</h3>
+                                <ul>
+                                    <li>CFP Opens: TBD</li>
+                                    <li>CFP Closes: TBD</li>
+                                    <li>Speaker Notification: TBD</li>
+                                    <li>Slide Submissions Due: TBD</li>
+                                </ul>
+                                <p>Ready to share your expertise? Submit your proposal through our speaker form. We welcome both experienced speakers and first-time presenters who have compelling security insights to share.<br>Questions about speaking? Contact us at <a href="mailto:secdaemons@depaul.edu">secdaemons@depaul.edu</a></p>                        
+                                <h3><a href="https://forms.gle/sijgD62rgUwsrDj18" target="_blank">Speaker Form</a></h3>                               
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Sponsorapplication" class="tab-content">
+                        <div class="content-layout">
+                            <div class="text-container">
+                                <h1><img src="gifs/handshake.gif?v=1" alt="Sponsor Application Icon" class="workshop-icon">Sponsor Application<img src="gifs/handshake.gif?v=1" alt="Sponsor Application Icon" class="workshop-icon"></h1>
+                                <p>While DePaul University provides core funding for DaemonCon, our sponsors play a crucial role in elevating the experience. Your sponsorship helps us:</p>
+                                <ul>
+                                    <li>Host an engaging after-party networking event</li>
+                                    <li>Maintain free admission for all attendees</li>
+                                    <li>Provide valuable prizes and giveaways</li>
+                                    <li>Expand our convention space and capabilities</li>
+                                </ul>
+                                <h3>Why Sponor Us?</h3>
+                                <ul>
+                                    <li>Growing attendance (150+ previous attendees)</li>
+                                    <li>Prime downtown Chicago location</li>
+                                    <li>Free admission to maximize reach</li>
+                                    <li>50% recent graduates and students</li>
+                                    <li>Diverse technical backgrounds: Cybersecurity, Software Engineering, and more</li>
+                                    <li>Direct access to emerging talent</li>
+                                    <li>Brand visibility in Chicago's tech community</li>
+                                    <li>Competitive sponsorship rates</li>
+                                    <li>Opportunity to shape the next generation of security professionals</li>
+                                </ul>
+                                
+                                <p>Become a sponsor using the link below!</p>
+                                <h3><a href="https://forms.gle/ZTpng9A4KAFXfBDY6" target="_blank">Sponsor Form</a></h3>
+                                <h6>Note: Sponsorships are non-refundable once paid in full.</h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sponsor -->
+        <div id="sponsorsWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Sponsors</div>
+                    <div class="window-controls">
+                        <div class="window-control" onclick="minimizeWindow('sponsors')">-</div>
+                        <div class="window-control" onclick="maximizeWindow('sponsors')">□</div>
+                        <div class="window-control" onclick="closeWindow('sponsors')">×</div>
+                    </div>
+            </div>
+            <!-- Sponsor Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span><div class="dropdown-menu"><div class="menu-option"><u>N</u>ew</div><div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Document</div><div class="menu-option">Template</div><div class="menu-option">Project</div></div></div><div class="menu-option"><u>S</u>ave</div><div class="menu-separator"></div><div class="menu-option">E<u>x</u>it</div></div></div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span><div class="dropdown-menu"><div class="menu-option">Cu<u>t</u></div><div class="menu-option"><u>C</u>opy</div><div class="menu-option"><u>P</u>aste</div><div class="menu-separator"></div><div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span><div class="submenu"><div class="menu-option">Format</div><div class="menu-option">Properties</div></div></div></div></div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span><div class="dropdown-menu"><div class="menu-option"><u>T</u>oolbar</div><div class="menu-option"><u>S</u>tatus Bar</div></div></div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span><div class="dropdown-menu"><div class="menu-option"><u>O</u>ptions...</div></div></div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span><div class="dropdown-menu"><div class="menu-option"><u>H</u>elp Topics</div><div class="menu-separator"></div><div class="menu-option"><u>A</u>bout...</div></div></div>
+            </div>
+            <!-- Sponsor Content -->
+            <div class="window-content">
+                <div class="logo-grid">
+                    <div class="logo-item">
+                        <a href="https://www.wolfpointsecurity.com" target="_blank">
+                            <img src="images/WolfPointSecurityLogo.png" alt="Wolf Point Security">
+                        </a>
+                    </div>
+                    <div class="logo-item">
+                        <a href="https://www.zebra.com" target="_blank">
+                            <img src="images/ZebraLogo.png" alt="Zebra Technologies">
+                        </a>
+                    </div>
+                    <div class="logo-item">
+                        <a href="https://www.depaul.edu" target="_blank">
+                            <img src="images/DePaulLogo.png" alt="DePaul University">
+                        </a>
+                    </div>
+                    <div class="logo-item">
+                        <a href="https://secdaemons.org" target="_blank">
+                            <img src="images/Secdaemons.png" alt="SecDaemons">
+                        </a>
+                    </div>
+                </div>
+                <div class="sponsor-cta">
+                    <div class="sponsor-message">
+                        <img src="gifs/coin.gif?v=1" alt="Sponsor Icon" class="sponsor-icon">
+                        <a href="https://forms.gle/ZTpng9A4KAFXfBDY6" target="_blank">Become a Sponsor Today!</a>
+                        <img src="gifs/coin.gif?v=1" alt="Sponsor Icon" class="sponsor-icon">
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Address Book-->
+        <div id="addressBookWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Address Book - Main Identity</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('addressBook')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('addressBook')">□</div>
+                    <div class="window-control" onclick="closeWindow('addressBook')">×</div>
+                </div>
+            </div>
+            <!-- Address Book Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>N</u>ew</div>
+                        <div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span>
+                            <div class="submenu">
+                                <div class="menu-option">Document</div>
+                                <div class="menu-option">Template</div>
+                                <div class="menu-option">Project</div>
+                            </div>
+                        </div>
+                        <div class="menu-option"><u>S</u>ave</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option">E<u>x</u>it</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option">Cu<u>t</u></div>
+                        <div class="menu-option"><u>C</u>opy</div>
+                        <div class="menu-option"><u>P</u>aste</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span>
+                            <div class="submenu">
+                                <div class="menu-option">Format</div>
+                                <div class="menu-option">Properties</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>T</u>oolbar</div>
+                        <div class="menu-option"><u>S</u>tatus Bar</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>O</u>ptions...</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>H</u>elp Topics</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option"><u>A</u>bout...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="window-content" style="padding: 0;">
+                <div class="address-book">
+                    <div class="address-toolbar">
+                        <div class="toolbar-button">
+                            <img src="buttons/addressbook.png" alt="New">
+                            <span>New</span>
+                        </div>
+                        <div class="toolbar-button">
+                            <img src="buttons/addressbookprop.png" alt="Properties">
+                            <span>Properties</span>
+                        </div>
+                        <div class="toolbar-button">
+                            <img src="buttons/cross.png" alt="Delete">
+                            <span>Delete</span>
+                        </div>
+                        <div class="toolbar-separator"></div>
+                        <div class="toolbar-button">
+                            <img src="buttons/booksearch.png" alt="Find People">
+                            <span>Find People</span>
+                        </div>
+                        <div class="toolbar-button">
+                            <img src="buttons/addressbookprinter.png" alt="Print">
+                            <span>Print</span>
+                        </div>
+                        <div class="toolbar-button">
+                            <img src="buttons/addressbookworldcall.png" width="60px" alt="Action">
+                            <span>Action</span>
+                        </div>
+                    </div>
+                    <div class="address-content">
+                        <div class="address-sidebar">
+                            <div class="tree-structure">
+                                <div class="tree-item root">
+                                    <div class="vertical-line"></div>
+                                    <img src="buttons/book.png" alt="book">
+                                    <span class="tree-label" onclick="showContacts('shared')">Shared Contacts</span>
+                                </div>
+        
+                                <div class="tree-item parent">
+                                    <div class="minus-button" onclick="toggleMainIdentity(this)">-</div>
+                                    <div class="horizontal-line"></div>
+                                    <img src="buttons/addressbookfolder.png" alt="folder">
+                                    <span class="tree-label" onclick="showContacts('main')">DaemonCon 2025 Contacts</span>
+                                </div>
+        
+                                <div class="children" id="mainChildren">
+                                    <div class="vertical-connector"></div>
+                                    <div class="tree-item child">
+                                        <div class="horizontal-connector"></div>
+                                        <img src="buttons/addressbookusers.png" alt="person">
+                                        <span class="tree-label" onclick="showContacts('leads')">Convention Leads</span>
+                                    </div>
+        
+                                    <div class="tree-item child">
+                                        <div class="horizontal-connector"></div>
+                                        <img src="buttons/addressbookusers.png" alt="person">
+                                        <span class="tree-label" onclick="showContacts('usefuldrones')">Useful Drones</span>
+                                    </div>
+        
+        
+                                    <!--<div class="tree-item child">
+                                        <div class="horizontal-connector"></div>
+                                        <img src="buttons/addressbookusers.png" alt="person">
+                                        <span class="tree-label" onclick="showContacts('lackeys')">Convention Lackeys</span>
+                                    </div>-->
+        
+                                    <div class="tree-item child">
+                                        <div class="horizontal-connector"></div>
+                                        <img src="buttons/addressbookusers.png" alt="person">
+                                        <span class="tree-label" onclick="showContacts('founders')">Founders</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address-main">
+                            <div id="contactGrid" class="contact-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="window-footer">0 items</div>
+        </div>
+
+        <!-- Solitaire -->
+        <div id="solitaireWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">Solitaire</div>
+                <div class="window-controls">
+                    <div class="window-control" onclick="minimizeWindow('solitaire')">-</div>
+                    <div class="window-control" onclick="maximizeWindow('solitaire')">□</div>
+                    <div class="window-control" onclick="closeWindow('solitaire')">×</div>
+                </div>
+            </div>
+            <!-- Solitaire Menu Bar -->
+            <div class="menu-bar">
+                <div class="menu-item" data-menu="file"><span class="menu-text"><u>F</u>ile</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>N</u>ew</div>
+                        <div class="menu-option has-submenu"><u>O</u>pen<span class="submenu-arrow">►</span>
+                            <div class="submenu">
+                                <div class="menu-option">Document</div>
+                                <div class="menu-option">Template</div>
+                                <div class="menu-option">Project</div>
+                            </div>
+                        </div>
+                        <div class="menu-option"><u>S</u>ave</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option">E<u>x</u>it</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="edit"><span class="menu-text"><u>E</u>dit</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option">Cu<u>t</u></div>
+                        <div class="menu-option"><u>C</u>opy</div>
+                        <div class="menu-option"><u>P</u>aste</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option has-submenu"><u>A</u>dvanced<span class="submenu-arrow">►</span>
+                            <div class="submenu">
+                                <div class="menu-option">Format</div>
+                                <div class="menu-option">Properties</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="view"><span class="menu-text"><u>V</u>iew</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>T</u>oolbar</div>
+                        <div class="menu-option"><u>S</u>tatus Bar</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="tools"><span class="menu-text"><u>T</u>ools</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>O</u>ptions...</div>
+                    </div>
+                </div>
+                <div class="menu-item" data-menu="help"><span class="menu-text"><u>H</u>elp</span>
+                    <div class="dropdown-menu">
+                        <div class="menu-option"><u>H</u>elp Topics</div>
+                        <div class="menu-separator"></div>
+                        <div class="menu-option"><u>A</u>bout...</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Solitaire Content -->
+            <div class="window-content">
+                <div class="container">
+                    <div class="top-area">
+                        <div class="container">
+                            <div class="left-area">
+                                <div id="deck" class="deck"></div>
+                                <div id="top-cards" class="top-cards"></div>
+                            </div>
+                            <div class="right-area">
+                                <div class="pile"><span id="spade-cards">♠</span></div>
+                                <div class="pile"><span id="heart-cards">♥</span></div>
+                                <div class="pile"><span id="diamond-cards">♦</span></div>
+                                <div class="pile"><span id="club-cards">♣</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-area">
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <!-- Taskbar -->
+        <div id="taskbar">
+            <!-- Start Menu -->
+            <div id="start-button">
+                <img src="images/DaemonHead.png" alt="Start">
+                Start
+                <div id="start-menu">
+                    <div id="start-menu-content">
+                        <div id="start-menu-sidebar">
+                            DaemonCon 2025 DaemonOS
+                        </div>
+                        <div id="start-menu-options">
+                            <div class="start-menu-item start-menu-item-with-submenu">
+                                <img src="gifs/writing.gif?v=1" alt="Policies">
+                                Policies
+                                <div class="submenu">
+                                    <div class="submenu-item" onclick="openWindow('deistatement')">DEI Statement</div>
+                                    <div class="submenu-item" onclick="openWindow('landack')">Land Acknowledgement</div>
+                                    <div class="submenu-item" onclick="openWindow('faq')">FAQ</div>
+                                </div>
+                            </div>
+                            <div class="start-menu-item" onclick="openWindow('schedule')">
+                                <img src="gifs/school_calendar.gif?v=1" alt="Schedule">
+                                Schedule
+                            </div>
+                            <div class="start-menu-item" onclick="openWindow('register')">
+                                <img src="gifs/register.gif?v=1" alt="Register">
+                                Register
+                            </div>
+                            <div class="start-menu-item" onclick="openWindow('sponsors')">
+                                <img src="gifs/coin.gif?v=1" alt="Sponsors">
+                                Sponsors
+                            </div>
+                            <div id="shutdown-separator"></div>
+                            <div class="start-menu-item" id="run-option">
+                                <img src="gifs/runnin.gif?v=1" alt="Run" id="run-icon"> Run
+                            </div>
+                            <div class="start-menu-item" onclick="location.reload()">
+                                <img src="gifs/rotating_computer.gif?v=1" alt="Shutdown">
+                                Shut Down...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Taskbar -->
+            <div class="taskbar-item" onclick="openWindow('sponsors')">Sponsors</div>
+            <div class="taskbar-item" onclick="openWindow('schedule')">Schedule</div>
+            <div class="taskbar-item" onclick="openWindow('register')">Registration</div>
+        </div>
+    </div>
+
+    <div id="mobile-warning" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-button">&times;</span>
+                <h2>Desktop Feature Only</h2>
+            </div>
+            <div class="modal-body">
+                <p>The Solitaire game is only available on desktop devices. Please visit this site on a computer to play.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button">Understood</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
