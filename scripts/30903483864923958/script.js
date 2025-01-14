@@ -1,5 +1,5 @@
 const bootMessages = [
-    "DaemonOS 2024v1",
+    "DaemonOS 2025v1",
     "Copyright (C) DaemonCon",
     "",
     "INITIALIZING SYSTEM: STARTED",
@@ -16,7 +16,7 @@ const bootMessages = [
     "ESTABLISHING SMBv2 WITH FACULTY: SENT",
     "LOADING DAEMONCON INTERFACE: COMPLETED",
     "",
-    "SYSTEM READY. WELCOME TO DAEMONCON 2024."
+    "SYSTEM READY. WELCOME TO DAEMONCON 2025."
 ];
 let highestZIndex = 100;
 let solitaireInitialized = false;
