@@ -260,32 +260,32 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
         solitaire: {
             minWidth: 1600,
             minHeight: 1200,
-            maxWidth: Math.min(1200, availableWidth * 0.95),
-            maxHeight: Math.min(900, availableHeight * 0.95),
+            maxWidth: Math.min(1500, availableWidth * 0.95),
+            maxHeight: Math.min(1200, availableHeight * 0.95),
             preferredWidth: Math.min(1000, availableWidth * 0.8),
             preferredHeight: Math.min(800, availableHeight * 0.8)
         },
         about: {
             minWidth: 600,
             minHeight: 600,
-            maxWidth: Math.min(800, availableWidth * 0.7),
-            maxHeight: Math.min(800, availableHeight * 0.7),
+            maxWidth: Math.min(1200, availableWidth * 0.7),
+            maxHeight: Math.min(1200, availableHeight * 0.7),
             preferredWidth: Math.min(500, availableWidth * 0.8),
             preferredHeight: Math.min(600, availableHeight * 0.8)
         },
         schedule: {
             minWidth: 600,
-            minHeight: 800,
-            maxWidth: Math.min(900, availableWidth * 0.9),
-            maxHeight: Math.min(1000, availableHeight * 0.9),
+            minHeight: 900,
+            maxWidth: Math.min(1200, availableWidth * 0.9),
+            maxHeight: Math.min(1500, availableHeight * 0.9),
             preferredWidth: Math.min(800, availableWidth * 0.75),
             preferredHeight: Math.min(600, availableHeight * 0.75)
         },
         workshops: {
             minWidth: 300,
             minHeight: 500,
-            maxWidth: Math.min(900, availableWidth * 0.85),
-            maxHeight: Math.min(700, availableHeight * 0.85),
+            maxWidth: Math.min(1200, availableWidth * 0.85),
+            maxHeight: Math.min(900, availableHeight * 0.85),
             preferredWidth: Math.min(700, availableWidth * 0.7),
             preferredHeight: Math.min(500, availableHeight * 0.7)
         }
