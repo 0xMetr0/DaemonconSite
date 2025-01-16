@@ -258,8 +258,8 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
     // Window-specific constraints
     const constraints = {
         solitaire: {
-            minWidth: 800,
-            minHeight: 600,
+            minWidth: 1600,
+            minHeight: 1200,
             maxWidth: Math.min(1200, availableWidth * 0.95),
             maxHeight: Math.min(900, availableHeight * 0.95),
             preferredWidth: Math.min(1000, availableWidth * 0.8),
@@ -267,15 +267,15 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
         },
         about: {
             minWidth: 300,
-            minHeight: 400,
+            minHeight: 600,
             maxWidth: Math.min(800, availableWidth * 0.8),
             maxHeight: Math.min(600, availableHeight * 0.8),
             preferredWidth: Math.min(500, availableWidth * 0.6),
             preferredHeight: Math.min(500, availableHeight * 0.7)
         },
         schedule: {
-            minWidth: 300,
-            minHeight: 400,
+            minWidth: 600,
+            minHeight: 800,
             maxWidth: Math.min(1000, availableWidth * 0.9),
             maxHeight: Math.min(800, availableHeight * 0.9),
             preferredWidth: Math.min(800, availableWidth * 0.75),
@@ -283,7 +283,7 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
         },
         workshops: {
             minWidth: 300,
-            minHeight: 300,
+            minHeight: 500,
             maxWidth: Math.min(900, availableWidth * 0.85),
             maxHeight: Math.min(700, availableHeight * 0.85),
             preferredWidth: Math.min(700, availableWidth * 0.7),
