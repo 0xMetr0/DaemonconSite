@@ -284,42 +284,55 @@
                     <div style="padding: 4px; border-bottom: 1px solid #808080; font-size: 12px;">
                         Appointments for Jan 24, 2025
                     </div>
-                    <div style="display: flex; height: calc(100% - 25px); background: white;">
-                        <div style="display: flex; border-right: 1px solid #808080;">
-                            <div style="width: 80px; font-size: 12px;">
-                                <div style="padding: 4px; background: #d4d0c8; border-bottom: 1px solid #808080; font-size: 12px;">Event Time</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">10:00 AM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">10:30 AM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">11:00 AM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">12:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">01:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">02:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">03:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">03:30 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">04:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">04:30 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">05:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">06:00 PM</div>
-                                <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">07:00 PM</div>
-                            </div>
+                    <div style="display: flex; flex-direction: column; background: white; border: 1px solid #808080;">
+                        <!-- Header Row -->
+                        <div style="display: flex; font-size: 12px; background: #d4dce8; font-weight: bold;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; text-align: center;">Event Time</div>
+                            <div style="flex-grow: 1; padding: 4px; text-align: center;">Description</div>
                         </div>
-                        <!-- Description column -->
-                        <div style="flex-grow: 1; font-size: 12px;">
-                            <div style="padding: 4px; background: #d4d0c8; border-bottom: 1px solid #808080; font-size: 12px;">Description</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Registration</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Welcome</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Keynote (Jibran Ilyas - Google Mandiant)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Lunch</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 1 - (Johny Xmas - Kraft Heinz)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Industry Panel Discussion - (Sarvesh Joshi - iManage, Braden Huddleston, Johny Xmas - Kraft Heinz, Sean Appelson - Kroll, Kevin Naughton - BT Partners, Alden Hutchison - RSM)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 2 - (TBD - RSM)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 3 - (Sean Juroviesky - Arcane Ward)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 4 - (Phil Sexton - CAT)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Talk 5 - (Anna Andler - Google Mandiant)</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Hacker Jeopardy</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">Closing Remarks</div>
-                            <div style="border-bottom: 1px solid #dfdfdf; padding: 2px;">After Party</div>
+                    
+                        <!-- Data Rows -->
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">10:00 AM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Registration</div>
                         </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">10:30 AM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Welcome</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">11:00 AM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Keynote (Jibran Ilyas – Google Mandiant)</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">12:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Lunch</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">01:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Talk 1 (Johny Xmas – Kraft Heinz)</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">02:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Industry Panel Discussion (Sarvesh Joshi – iManage, Braden Huddleston, Johny Xmas – Kraft Heinz)</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">03:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Talk 2 (TBD – RSM)</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">03:30 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Talk 3 (Sean Juroviesky – Arcane Ward)</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">05:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Hacker Jeopardy</div>
+                        </div>
+                        <div style="display: flex; border-top: 1px solid #dddddd; background: white;">
+                            <div style="width: 80px; flex-shrink: 0; border-right: 1px solid #808080; padding: 4px; display: flex; align-items: center; justify-content: center;">06:00 PM</div>
+                            <div style="flex-grow: 1; padding: 4px; display: flex; align-items: center;">Closing Remarks</div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
