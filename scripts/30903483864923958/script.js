@@ -269,15 +269,15 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
             minWidth: 600,
             minHeight: 600,
             maxWidth: Math.min(800, availableWidth * 0.7),
-            maxHeight: Math.min(600, availableHeight * 0.7),
+            maxHeight: Math.min(800, availableHeight * 0.7),
             preferredWidth: Math.min(500, availableWidth * 0.8),
-            preferredHeight: Math.min(500, availableHeight * 0.8)
+            preferredHeight: Math.min(600, availableHeight * 0.8)
         },
         schedule: {
             minWidth: 600,
             minHeight: 800,
-            maxWidth: Math.min(1000, availableWidth * 0.9),
-            maxHeight: Math.min(800, availableHeight * 0.9),
+            maxWidth: Math.min(900, availableWidth * 0.9),
+            maxHeight: Math.min(1000, availableHeight * 0.9),
             preferredWidth: Math.min(800, availableWidth * 0.75),
             preferredHeight: Math.min(600, availableHeight * 0.75)
         },
