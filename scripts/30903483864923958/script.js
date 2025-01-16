@@ -266,7 +266,7 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
             preferredHeight: Math.min(800, availableHeight * 0.8)
         },
         about: {
-            minWidth: 300,
+            minWidth: 400,
             minHeight: 600,
             maxWidth: Math.min(800, availableWidth * 0.8),
             maxHeight: Math.min(600, availableHeight * 0.8),
