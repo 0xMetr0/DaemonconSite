@@ -26,6 +26,7 @@ let bootText = "";
 let startMenuOpen = false;
 const startMenu = document.getElementById('start-menu');
 const startButton = document.getElementById('start-button');
+
 function typeWriter(text, i, fnCallback) {
     if (i < text.length) {
         bootText += text[i];
@@ -53,6 +54,7 @@ function startBootSequence(i) {
         }, 1000);
     }
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     let activeMenuItem = null;
     let isMenuOpen = false;
@@ -121,6 +123,7 @@ window.onload = function() {
         startBootSequence(0);
     }, 500);
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById('start-button');
     const startMenu = document.getElementById('start-menu');
@@ -243,9 +246,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function isMobileDevice() {
+    console.group('Mobile Detection Debug:');
+    
+    const hasTouch = 'ontouchstart' in window;
+    console.log('Has touch events:', hasTouch);
+    
+    const hasOrientation = typeof window.orientation !== 'undefined';
+    console.log('Has orientation:', hasOrientation);
+    
+    const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    console.log('Has coarse pointer:', hasCoarsePointer);
+    
+    const hasAnyCoarsePointer = window.matchMedia('(any-pointer: coarse)').matches;
+    console.log('Has any coarse pointer:', hasAnyCoarsePointer);
+    console.log('Window inner width:', window.innerWidth);
+    console.log('Touch points:', navigator.maxTouchPoints);
+    console.log('User Agent:', navigator.userAgent);
+    
+    const isMobile = hasTouch && (hasOrientation || hasCoarsePointer || hasAnyCoarsePointer);
+    console.log('Final result - Is Mobile:', isMobile);
+    
+    console.groupEnd();
+    return isMobile;
+}
 
 function getWindowConstraints(windowName, availableWidth, availableHeight) {
-    // Default constraints
+    const isMobile = isMobileDevice();
+    
+    // Mobile-specific constraints
+    if (isMobile) {
+        const mobileConstraints = {
+            minWidth: Math.min(300, availableWidth * 0.9),
+            minHeight: Math.min(200, availableHeight * 0.4),
+            maxWidth: availableWidth * 0.95,
+            maxHeight: availableHeight * 0.9,
+            preferredWidth: availableWidth * 0.9,
+            preferredHeight: availableHeight * 0.8
+        };
+
+        // Window-specific mobile adjustments
+        const mobileSpecific = {
+            solitaire: {
+                preferredWidth: availableWidth * 0.95,
+                preferredHeight: availableHeight * 0.85
+            },
+            about: {
+                preferredWidth: availableWidth * 0.9,
+                preferredHeight: availableHeight * 0.7
+            },
+            schedule: {
+                preferredWidth: availableWidth * 0.95,
+                preferredHeight: availableHeight * 0.85
+            },
+            workshops: {
+                preferredWidth: availableWidth * 0.9,
+                preferredHeight: availableHeight * 0.75
+            }
+        };
+
+        return {
+            ...mobileConstraints,
+            ...(mobileSpecific[windowName] || {})
+        };
+    }
+    
+    // Default desktop constraints
     const defaultConstraints = {
         minWidth: 400,
         minHeight: 300,
@@ -255,49 +321,51 @@ function getWindowConstraints(windowName, availableWidth, availableHeight) {
         preferredHeight: Math.min(400, availableHeight * 0.7)
     };
 
-    // Window-specific constraints
+    // Window-specific desktop constraints
     const constraints = {
         solitaire: {
-            minWidth: 1600,
-            minHeight: 1200,
+            minWidth: 800,
+            minHeight: 600,
             maxWidth: Math.min(1500, availableWidth * 0.95),
             maxHeight: Math.min(1200, availableHeight * 0.95),
             preferredWidth: Math.min(1000, availableWidth * 0.8),
             preferredHeight: Math.min(800, availableHeight * 0.8)
         },
         about: {
-            minWidth: 600,
-            minHeight: 600,
-            maxWidth: Math.min(1200, availableWidth * 0.7),
-            maxHeight: Math.min(1200, availableHeight * 0.7),
-            preferredWidth: Math.min(500, availableWidth * 0.8),
-            preferredHeight: Math.min(600, availableHeight * 0.8)
+            minWidth: 400,
+            minHeight: 400,
+            maxWidth: Math.min(800, availableWidth * 0.7),
+            maxHeight: Math.min(600, availableHeight * 0.7),
+            preferredWidth: Math.min(500, availableWidth * 0.6),
+            preferredHeight: Math.min(500, availableHeight * 0.6)
         },
         schedule: {
             minWidth: 600,
-            minHeight: 900,
+            minHeight: 500,
             maxWidth: Math.min(1200, availableWidth * 0.9),
-            maxHeight: Math.min(1500, availableHeight * 0.9),
+            maxHeight: Math.min(900, availableHeight * 0.9),
             preferredWidth: Math.min(800, availableWidth * 0.75),
             preferredHeight: Math.min(600, availableHeight * 0.75)
         },
         workshops: {
             minWidth: 300,
-            minHeight: 500,
-            maxWidth: Math.min(1200, availableWidth * 0.85),
-            maxHeight: Math.min(900, availableHeight * 0.85),
-            preferredWidth: Math.min(700, availableWidth * 0.7),
+            minHeight: 400,
+            maxWidth: Math.min(900, availableWidth * 0.85),
+            maxHeight: Math.min(700, availableHeight * 0.85),
+            preferredWidth: Math.min(600, availableWidth * 0.7),
             preferredHeight: Math.min(500, availableHeight * 0.7)
         }
     };
 
     return constraints[windowName] || defaultConstraints;
 }
+
 function openWindow(windowName) {
     if (windowName === 'solitaire' && isMobileDevice()) {
         showMobileWarning();
         return;
     }
+    
     const window = document.getElementById(windowName + 'Window');
     const desktop = document.getElementById('desktop');
     const taskbarHeight = document.getElementById('taskbar').offsetHeight;
@@ -324,19 +392,30 @@ function openWindow(windowName) {
     // Calculate optimal position
     let left, top;
     
-    if (windowName === 'solitaire') {
-        // Center solitaire window
-        left = Math.max(0, (availableWidth - constraints.preferredWidth) / 2);
-        top = Math.max(0, (availableHeight - constraints.preferredHeight) / 2);
-    } else {
-        // Cascade other windows with offset
-        const offset = Math.min(30, availableWidth * 0.02); // Responsive offset
+    const isMobile = isMobileDevice();
+    
+    if (isMobile) {
+        // Center windows on mobile and add small offset for stacking
         const openWindows = document.querySelectorAll('.window:not(.minimized)');
         const windowCount = openWindows.length;
+        const offset = Math.min(20, availableWidth * 0.05);
         
-        // Calculate position with cascade effect
-        left = Math.min((offset * windowCount) % (availableWidth / 2), availableWidth - constraints.preferredWidth);
-        top = Math.min((offset * windowCount) % (availableHeight / 2), availableHeight - constraints.preferredHeight);
+        left = Math.max(10, Math.min((offset * windowCount) % (availableWidth * 0.3), availableWidth - constraints.preferredWidth - 10));
+        top = Math.max(10, Math.min((offset * windowCount) % (availableHeight * 0.3), availableHeight - constraints.preferredHeight - 10));
+    } else {
+        if (windowName === 'solitaire') {
+            // Center solitaire window on desktop
+            left = Math.max(0, (availableWidth - constraints.preferredWidth) / 2);
+            top = Math.max(0, (availableHeight - constraints.preferredHeight) / 2);
+        } else {
+            // Cascade other windows with offset
+            const offset = Math.min(30, availableWidth * 0.02);
+            const openWindows = document.querySelectorAll('.window:not(.minimized)');
+            const windowCount = openWindows.length;
+            
+            left = Math.min((offset * windowCount) % (availableWidth / 2), availableWidth - constraints.preferredWidth);
+            top = Math.min((offset * windowCount) % (availableHeight / 2), availableHeight - constraints.preferredHeight);
+        }
     }
     
     // Ensure window is within bounds
@@ -346,26 +425,17 @@ function openWindow(windowName) {
     // Apply position
     window.style.left = `${left}px`;
     window.style.top = `${top}px`;
+    
     // Bring the window to the front
     highestZIndex++;
     window.style.zIndex = highestZIndex;
     setActiveWindow(window);
 
-    if (windowName === 'solitaire') {
-        const windowWidth = 800;
-        const windowHeight = 600;
-        const left = (screen.width - windowWidth) / 2;
-        const top = (screen.height - windowHeight) / 2;
-        window.style.left = left + 'px';
-        window.style.top = top + 'px'
-        if (windowName === 'solitaire') {
-            // Only initialize if not already initialized
-            if (!solitaireInitialized) {
-                initSolitaire();
-                solitaireInitialized = true;
-            }
-        }
+    if (windowName === 'solitaire' && !solitaireInitialized) {
+        initSolitaire();
+        solitaireInitialized = true;
     }
+    
     // Add resize observer to handle window repositioning and resizing
     const resizeObserver = new ResizeObserver(() => {
         // Recalculate constraints based on new display size
@@ -413,6 +483,7 @@ function setActiveWindow(window) {
     window.style.zIndex = highestZIndex;
     window.querySelector('.window-header').classList.add('active');
 }
+
 function openTab(evt, tabName, windowId) {
     // Get the specific window's content
     const windowElement = document.getElementById(windowId);
@@ -482,7 +553,6 @@ function dragElement(elmnt) {
         pos4 = e.clientY;
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
     }
 
     function closeDragElement() {
@@ -490,6 +560,7 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+
 function closeWindow(windowName) {
     const window = document.getElementById(windowName + 'Window');
     window.style.display = 'none';
@@ -500,7 +571,6 @@ function minimizeWindow(windowName) {
     const window = document.getElementById(windowName + 'Window');
     window.classList.add('minimized');
 }
-
 
 function maximizeWindow(windowName) {
     const window = document.getElementById(windowName + 'Window');
@@ -533,6 +603,26 @@ document.querySelectorAll('.window').forEach(window => {
     window.addEventListener('click', () => setActiveWindow(window));
 });
 
+function showMobileWarning() {
+    const modal = document.getElementById('mobile-warning');
+    modal.style.display = 'block';
+    const closeBtn = modal.querySelector('.close-button');
+    const modalBtn = modal.querySelector('.modal-button');
+    
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    closeBtn.onclick = closeModal;
+    modalBtn.onclick = closeModal;
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+}
+
+// Solitaire game functions (keeping original implementation)
 function createCard(rank, suit, higher) {
     let suitSymbol, cardColor;
     switch (suit) {
@@ -607,10 +697,8 @@ function putCardsInDeck(cards) {
         cardElement.className = 'card back';
         cardElement.cardInfo = cardInfo;
         deck.appendChild(cardElement);
-        //console.log(`Added card to deck:`, cardInfo);
     });
 }
-
 
 function turnCard() {
     if (!this.cardInfo) {
@@ -629,7 +717,6 @@ function turnCard() {
         }
         this.setAttribute('draggable', true);
     }
-
 }
 
 function turnCardBack(card) {
@@ -653,7 +740,6 @@ function distributeCards() {
         }
     });
 }
-
 
 function showTopCard(topCards, deck, deckTopCard) {
     if (deckTopCard.cardInfo) {
@@ -694,25 +780,18 @@ function returnCardsToDeck(topCards, deck) {
 }
 
 function checkDeckCards() {
-    //console.log("checkDeckCards called");
     const topCards = document.getElementById('top-cards');
     const deck = document.getElementById('deck');
     const deckTopCard = deck.lastElementChild;
 
-    console.log("Deck top card:", deckTopCard);
-
     if (!deckTopCard) {
-        //console.log("No top card, returning cards to deck");
         returnCardsToDeck(topCards, deck);
     } else if (deckTopCard.style.visibility === 'hidden') {
-        //console.log("Top card is hidden, returning cards to deck");
         returnCardsToDeck(topCards, deck);
     } else {
-        //console.log("Showing top card");
         showTopCard(topCards, deck, deckTopCard);
     }
 }
-
 
 function changeCardPosition(cardToDrop, dropSpot, checkCondition) {
     if (checkCondition) {
@@ -722,7 +801,6 @@ function changeCardPosition(cardToDrop, dropSpot, checkCondition) {
         if (cardToDrop.cardInfo.below) {
             cardToDrop.cardInfo.below.forEach(card => dropSpot.append(card));
         }
-
         return cardAbove;
     }
 }
@@ -759,64 +837,58 @@ function dropInPile(cardToDrop, dropSpot) {
                 const checkSuit = lastCardInPile.id.split('-')[0] === cardToDropInfo.suit;
                 return changeCardPosition(cardToDrop, dropSpot, (checkRank && checkSuit));
             }
-
         }
     }
 }
 
-    function dropCard(event, cardToDrop) {
-        const tgt = event.target;
-        const findSpot = function (element, htmlClass) {
-            const classList = element.classList;
-            if (classList) {
-                if (classList.contains(htmlClass)) {return element;} 
-                else {return findSpot(element.parentNode, htmlClass);} 
-            }
-            return;
+function dropCard(event, cardToDrop) {
+    const tgt = event.target;
+    const findSpot = function (element, htmlClass) {
+        const classList = element.classList;
+        if (classList) {
+            if (classList.contains(htmlClass)) {return element;} 
+            else {return findSpot(element.parentNode, htmlClass);} 
         }
-        const dropSpot = findSpot(tgt, 'row') || findSpot(tgt, 'pile');
-        let cardAbove;
-        if (dropSpot) {
-            if (dropSpot.classList.contains('row')) {cardAbove = dropInRow(cardToDrop, dropSpot);} 
-            else if (dropSpot.classList.contains('pile')) {cardAbove = dropInPile(cardToDrop, dropSpot);}
-        }
-        if (cardAbove) {
-            turnCard.apply(cardAbove);
-        }
+        return;
     }
+    const dropSpot = findSpot(tgt, 'row') || findSpot(tgt, 'pile');
+    let cardAbove;
+    if (dropSpot) {
+        if (dropSpot.classList.contains('row')) {cardAbove = dropInRow(cardToDrop, dropSpot);} 
+        else if (dropSpot.classList.contains('pile')) {cardAbove = dropInPile(cardToDrop, dropSpot);}
+    }
+    if (cardAbove) {
+        turnCard.apply(cardAbove);
+    }
+}
 
-    function checkGameOver() {
-        const piles = document.querySelectorAll('.pile');
-        let allPilesComplete =  true;
-        piles.forEach(pile => {
-            allPilesComplete = allPilesComplete && (pile.childElementCount - 1) === 13;
-        });
-        if (allPilesComplete) {
-            alert('YOU WIN!');
-        }
+function checkGameOver() {
+    const piles = document.querySelectorAll('.pile');
+    let allPilesComplete =  true;
+    piles.forEach(pile => {
+        allPilesComplete = allPilesComplete && (pile.childElementCount - 1) === 13;
+    });
+    if (allPilesComplete) {
+        alert('YOU WIN!');
     }
+}
 
-    function resetSelections(card) {
-        card.cardInfo.below = null;
-        card = null;
-        return card;
-    }
+function resetSelections(card) {
+    card.cardInfo.below = null;
+    card = null;
+    return card;
+}
 
 function dragRowCards(card) {
-
     const cardParent = card.parentNode;
     const isLastCard = card === cardParent.lastElementChild;
 
     if (!isLastCard) {
-
         card.cardInfo.below = [];
-
         for (let i = cardParent.childElementCount - 1; i >= 0; i--) {
-
             if (cardParent.childNodes[i] === card) {
                 return;
             }
-
             card.cardInfo.below.unshift(cardParent.childNodes[i]);
         }
     }
@@ -841,21 +913,17 @@ document.addEventListener("drop", event => {
 });
 
 function initSolitaire() {
-    //console.log("Initializing solitaire");
     const deck = document.getElementById('deck');
     const rows = document.querySelectorAll('.row');
     deck.innerHTML = '';
     rows.forEach(row => row.innerHTML = '');
 
     const globalDeck = createDeck();
-    //console.log("Global deck created:", globalDeck);
     const shuffledDeck = shuffleCards(globalDeck);
-    //console.log("Deck shuffled:", shuffledDeck);
     putCardsInDeck(shuffledDeck);
     distributeCards();
     
     deck.addEventListener('click', checkDeckCards);
-    //console.log("Click event listener added to deck");
     
     const cards = document.getElementsByClassName('card');
     for (let i = 0; i < cards.length; i++) {
@@ -865,8 +933,11 @@ function initSolitaire() {
             console.warn('Card found without cardInfo:', cards[i]);
         }
     }
-    
-    console.log("Solitaire initialization complete");
+}
+
+function cleanupSolitaire() {
+    // Reset solitaire state when window is closed
+    solitaireInitialized = false;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -880,15 +951,11 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeTabs(windowId);
     });
 });
-//Address Book 
+
+// Address Book functionality
 const contactData = {
     shared: [],
     main: [],
-    //lackeys: [
-    //    { name: "Bruce Coffing", title: "CISO City of Chicago" },
-    //    { name: "John Doe", title: "Speaker" },
-    //    { name: "Jane Smith", title: "Lackey Role" }
-    //],
     leads: [
         { name: "Ryan Haley", title: "Faculty Liaison" },
         { name: "Petar Modrakovic", title: "Convention Coordinator" }
@@ -902,6 +969,7 @@ const contactData = {
         { name: "Ryan Haley", title: "Faculty Sponsor"}
     ]
 };
+
 function showContacts(section) {
     document.querySelectorAll('.tree-label').forEach(label => {
         label.classList.remove('selected');
@@ -937,52 +1005,8 @@ function toggleMainIdentity(element) {
         children.classList.remove('hidden');
     }
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     showContacts('main');
     dragElement(document.getElementById('addressBookWindow'));
 });
-
-function isMobileDevice() {
-    console.group('Mobile Detection Debug:');
-    
-    const hasTouch = 'ontouchstart' in window;
-    console.log('Has touch events:', hasTouch);
-    
-    const hasOrientation = typeof window.orientation !== 'undefined';
-    console.log('Has orientation:', hasOrientation);
-    
-    const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
-    console.log('Has coarse pointer:', hasCoarsePointer);
-    
-    const hasAnyCoarsePointer = window.matchMedia('(any-pointer: coarse)').matches;
-    console.log('Has any coarse pointer:', hasAnyCoarsePointer);
-    console.log('Window inner width:', window.innerWidth);
-    console.log('Touch points:', navigator.maxTouchPoints);
-    console.log('User Agent:', navigator.userAgent);
-    
-    const isMobile = hasTouch && (hasOrientation || hasCoarsePointer || hasAnyCoarsePointer);
-    console.log('Final result - Is Mobile:', isMobile);
-    
-    console.groupEnd();
-    return isMobile;
-}
-
-function showMobileWarning() {
-    const modal = document.getElementById('mobile-warning');
-    modal.style.display = 'block';
-    const closeBtn = modal.querySelector('.close-button');
-    const modalBtn = modal.querySelector('.modal-button');
-    
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    closeBtn.onclick = closeModal;
-    modalBtn.onclick = closeModal;
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    };
-}
-
