@@ -527,7 +527,13 @@ function initializeTabs(windowId) {
 
 function dragElement(elmnt) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    elmnt.getElementsByClassName('window-header')[0].onmousedown = dragMouseDown;
+    const header = elmnt.getElementsByClassName('window-header')[0];
+    
+    // Mouse events
+    header.onmousedown = dragMouseDown;
+    
+    // Touch events
+    header.ontouchstart = dragTouchStart;
 
     function dragMouseDown(e) {
         e = e || window.event;
@@ -537,6 +543,27 @@ function dragElement(elmnt) {
         pos4 = e.clientY;
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
+        
+        // Prevent scrolling during drag
+        document.body.classList.add('dragging');
+
+        // Bring the clicked window to the front
+        highestZIndex++;
+        elmnt.style.zIndex = highestZIndex;
+        setActiveWindow(elmnt);
+    }
+
+    function dragTouchStart(e) {
+        if (e.target.classList.contains('window-control')) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        pos3 = touch.clientX;
+        pos4 = touch.clientY;
+        document.ontouchend = closeDragElement;
+        document.ontouchmove = elementDragTouch;
+        
+        // Prevent scrolling during drag
+        document.body.classList.add('dragging');
 
         // Bring the clicked window to the front
         highestZIndex++;
@@ -551,13 +578,45 @@ function dragElement(elmnt) {
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        updatePosition();
+    }
+
+    function elementDragTouch(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        pos1 = pos3 - touch.clientX;
+        pos2 = pos4 - touch.clientY;
+        pos3 = touch.clientX;
+        pos4 = touch.clientY;
+        updatePosition();
+    }
+
+    function updatePosition() {
+        const newTop = elmnt.offsetTop - pos2;
+        const newLeft = elmnt.offsetLeft - pos1;
+        
+        // Get desktop bounds
+        const desktop = document.getElementById('desktop');
+        const taskbarHeight = document.getElementById('taskbar').offsetHeight;
+        const maxLeft = desktop.offsetWidth - elmnt.offsetWidth;
+        const maxTop = desktop.offsetHeight - taskbarHeight - elmnt.offsetHeight;
+        
+        // Constrain to desktop bounds
+        elmnt.style.top = Math.max(0, Math.min(newTop, maxTop)) + "px";
+        elmnt.style.left = Math.max(0, Math.min(newLeft, maxLeft)) + "px";
     }
 
     function closeDragElement() {
+        // Remove mouse event listeners
         document.onmouseup = null;
         document.onmousemove = null;
+        
+        // Remove touch event listeners
+        document.ontouchend = null;
+        document.ontouchmove = null;
+        
+        // Re-enable scrolling
+        document.body.classList.remove('dragging');
     }
 }
 
