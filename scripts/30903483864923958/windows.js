@@ -47,7 +47,15 @@ export function getWindowConstraints(windowName, availableWidth, availableHeight
 
 export function openWindow(windowName) {
     if (windowName === 'solitaire' && isMobileDevice()) {
-        if (window.showMobileWarning) window.showMobileWarning();
+        // Lazy-load showMobileWarning if not already loaded
+        if (!window.showMobileWarning) {
+            import('./solitare.js').then(({ showMobileWarning }) => {
+                window.showMobileWarning = showMobileWarning;
+                showMobileWarning();
+            }).catch(e => console.error('Failed to load mobile warning', e));
+        } else {
+            window.showMobileWarning();
+        }
         return;
     }
 
