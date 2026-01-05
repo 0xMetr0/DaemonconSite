@@ -18,13 +18,18 @@ const contactData = {
     ]
 };
 
-export function showContacts(section) {
+export function showContacts(section, evt) {
     document.querySelectorAll('.tree-label').forEach(label => {
         label.classList.remove('selected');
     });
-    event.target.classList.add('selected');
+    
+    // Only add selected class if we have an event with a target
+    if (evt && evt.target) {
+        evt.target.classList.add('selected');
+    }
+    
     const grid = document.getElementById('contactGrid');
-    const contacts = contactData[section];
+    const contacts = contactData[section] || [];
     grid.innerHTML = '';
     
     contacts.forEach(contact => {
@@ -44,7 +49,14 @@ export function showContacts(section) {
 }
 
 export function toggleMainIdentity(element) {
-    const children = document.getElementById('mainChildren');
+    // Find the parent tree-item element
+    const parentItem = element.closest('.tree-item.parent');
+    if (!parentItem) return;
+    
+    // Find the next sibling that is a children container
+    const children = parentItem.nextElementSibling;
+    if (!children || !children.classList.contains('children')) return;
+    
     if (element.textContent === '-') {
         element.textContent = '+';
         children.classList.add('hidden');

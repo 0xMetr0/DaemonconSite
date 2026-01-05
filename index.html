@@ -798,28 +798,27 @@
                                 <div class="tree-item root">
                                     <div class="vertical-line"></div>
                                     <img src="buttons/book.png" alt="book">
-                                    <span class="tree-label" onclick="showContacts('shared')">Shared Contacts</span>
+                                    <span class="tree-label" onclick="showContacts('shared', event)">Shared Contacts</span>
                                 </div>
         
                                 <div class="tree-item parent">
                                     <div class="minus-button" onclick="toggleMainIdentity(this)">-</div>
                                     <div class="horizontal-line"></div>
                                     <img src="buttons/addressbookfolder.png" alt="folder">
-                                    <span class="tree-label" onclick="showContacts('main')">DaemonCon 2026 Contacts</span>
+                                    <span class="tree-label" onclick="showContacts('main', event)">DaemonCon 2026 Contacts</span>
                                 </div>
-        
                                 <div class="children">
                                     <div class="vertical-connector"></div>
                                     <div class="tree-item child">
                                         <div class="horizontal-connector"></div>
                                         <img src="buttons/addressbookusers.png" alt="person">
-                                        <span class="tree-label" onclick="showContacts('leads')">Convention Leads</span>
+                                        <span class="tree-label" onclick="showContacts('leads', event)">Convention Leads</span>
                                     </div>    
         
                                     <div class="tree-item child">
                                         <div class="horizontal-connector"></div>
                                         <img src="buttons/addressbookusers.png" alt="person">
-                                        <span class="tree-label" onclick="showContacts('lackeys')">Convention Lackeys</span>
+                                        <span class="tree-label" onclick="showContacts('lackeys', event)">Convention Lackeys</span>
                                     </div>
                                 </div>
 
@@ -827,19 +826,19 @@
                                     <div class="minus-button" onclick="toggleMainIdentity(this)">-</div>
                                     <div class="horizontal-line"></div>
                                     <img src="buttons/addressbookfolder.png" alt="folder">
-                                    <span class="tree-label" onclick="showContacts('shared')">Legacy Contacts</span>
+                                    <span class="tree-label" onclick="showContacts('shared', event)">Legacy Contacts</span>
                                 </div>
                                 <div class="children">
                                     <div class="vertical-connector"></div>
                                     <div class="tree-item child">
                                         <div class="horizontal-connector"></div>
                                         <img src="buttons/addressbookusers.png" alt="person">
-                                        <span class="tree-label" onclick="showContacts('founders')">Founders</span>
+                                        <span class="tree-label" onclick="showContacts('founders', event)">Founders</span>
                                     </div>
                                     <div class="tree-item child">
                                         <div class="horizontal-connector"></div>
                                         <img src="buttons/addressbookusers.png" alt="person">
-                                        <span class="tree-label" onclick="showContacts('usefuldrones')">Useful Drones</span>
+                                        <span class="tree-label" onclick="showContacts('usefuldrones', event)">Useful Drones</span>
                                     </div>
                                 </div>
                             </div>
