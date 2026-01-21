@@ -1,4 +1,4 @@
-// Schedule functionality - Appointment descriptions
+// Appointment descriptions
 const appointmentDescriptions = {
     "registration": {
         title: "Registration",

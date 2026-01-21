@@ -1407,6 +1407,7 @@ body.dragging {
 }
 /* Schedule window layout */
 #scheduleWindow .window-content {
+    height: calc(100% - 95px) !important;
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -125,6 +125,15 @@ export function openWindow(windowName) {
             window.toggleMainIdentity = toggleMainIdentity;
             initAddressBook();
         }).catch(e => console.error('Failed to load addressbook', e));
+    } else if (windowName === 'schedule') {
+        // Lazy-load schedule module
+        if (!window.scheduleInitialized) {
+            import('./schedule.js').then(({ initSchedule, selectAppointment }) => {
+                window.selectAppointment = selectAppointment;
+                initSchedule();
+                window.scheduleInitialized = true;
+            }).catch(e => console.error('Failed to load schedule', e));
+        }
     }
 
     const resizeObserver = new ResizeObserver(() => {

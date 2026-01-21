@@ -4,7 +4,7 @@ let startMenuOpen = false;
 const startMenu = document.getElementById('start-menu');
 const startButton = document.getElementById('start-button');
 const bootMessages = [
-    "DaemonOS 2026v1",
+    "DaemonOS 2026v5",
     "Copyright (C) DaemonCon",
     "",
     "INITIALIZING SYSTEM: STARTED",

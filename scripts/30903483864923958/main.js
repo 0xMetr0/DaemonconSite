@@ -4,7 +4,6 @@ import { makeWindowsDraggable } from './ui.js';
 import { initializeTabs, openTab } from './tabs.js';
 import * as Windows from './windows.js';
 import { startBootSequence } from './bootsequence.js';
-import { initSchedule, selectAppointment } from './schedule.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Expose key functions to global scope for legacy inline handlers
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getWindowConstraints = Windows.getWindowConstraints;
     window.openTab = openTab;
     window.startBootSequence = startBootSequence;
-    window.selectAppointment = selectAppointment;
 
     // Initialize UI modules
     try { initMenus(); } catch (e) { console.warn('initMenus failed', e); }
@@ -27,9 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ['scheduleWindow', 'workshopsWindow', 'registerWindow'].forEach(id => {
         try { initializeTabs(id); } catch (e) { /* ignore */ }
     });
-
-    // Initialize schedule
-    try { initSchedule(); } catch (e) { console.warn('initSchedule failed', e); }
 
     // Start boot sequence
     setTimeout(() => startBootSequence(0), 500);
