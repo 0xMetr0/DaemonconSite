@@ -1353,8 +1353,8 @@ color: #ff3300;
 }
 /* Mobile touch improvements */
 .window-header {
-    touch-action: none; /* Prevents default touch behaviors like scrolling */
-    user-select: none; /* Prevents text selection during drag */
+    touch-action: none;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -1363,12 +1363,12 @@ color: #ff3300;
 /* Increase touch target size on mobile */
 @media (max-width: 768px) {
     .window-header {
-        padding: 8px 6px; /* Increase header padding for better touch targets */
-        min-height: 24px; /* Ensure minimum touch target size */
+        padding: 8px 6px;
+        min-height: 24px; 
     }
     
     .window-control {
-        width: 24px; /* Larger touch targets for window controls */
+        width: 24px;
         height: 24px;
         margin-left: 4px;
     }
@@ -1403,5 +1403,187 @@ body.dragging {
         width: 20px;
         height: 20px;
         font-size: 12px;
+    }
+}
+/* Schedule window layout */
+#scheduleWindow .window-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Calendar section*/
+.schedule-calendar {
+    border: 1px solid #808080;
+    background: #c0c0c0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Bottom section */
+.schedule-bottom-section {
+    display: flex;
+    gap: 10px;
+}
+
+/* Appointments section */
+.schedule-appointments {
+    border: 1px solid #808080;
+    background: #c0c0c0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.appointments-header {
+    padding: 4px;
+    border-bottom: 1px solid #808080;
+    font-size: 13px;
+    background: #c0c0c0;
+}
+
+.appointments-table-container {
+    background: white;
+    border: 1px solid #808080;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.appointments-table thead {
+    z-index: 1;
+}
+
+.appointments-table th {
+    background: #d4dce8;
+    border: 1px solid #808080;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.appointments-table td {
+    border: 1px solid #dddddd;
+    padding: 4px;
+    background: white;
+    vertical-align: middle;
+}
+
+.appointments-table .time-cell {
+    width: 80px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Appointment row styles */
+.appointment-row {
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.appointment-row:hover {
+    background-color: #e8e8e8 !important;
+}
+
+.appointment-row:hover td {
+    background-color: #e8e8e8 !important;
+}
+
+.appointment-row.selected td {
+    background-color: #000080 !important;
+    color: white !important;
+}
+
+.appointment-row.selected:hover td {
+    background-color: #0000aa !important;
+}
+
+/* Description panel */
+.schedule-description-panel {
+    width: 220px;
+    min-width: 180px;
+    max-width: 250px;
+    border: 1px solid #808080;
+    background: #c0c0c0;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-panel-header {
+    background: #c0c0c0;
+    color: black;
+    padding: 4px;
+    font-size: 13px;
+    font-weight: normal;
+    flex-shrink: 0;
+    border-bottom: 1px solid #808080;
+}
+
+.description-panel-content {
+    padding: 10px;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border: 1px solid #808080;
+}
+
+/* Description content */
+.desc-header {
+    font-weight: bold;
+    font-size: 13px;
+    color: #000080;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #808080;
+}
+
+.desc-time,
+.desc-location,
+.desc-speaker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+.desc-time img,
+.desc-location img,
+.desc-speaker img {
+    flex-shrink: 0;
+}
+
+.desc-text {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dotted #808080;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* Description placeholder */
+.description-placeholder {
+    color: #808080;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 11px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    .schedule-bottom-section {
+        flex-direction: column;
+    }
+    
+    .schedule-description-panel {
+        width: 100%;
+        max-width: none;
+        min-height: 120px;
     }
 }
