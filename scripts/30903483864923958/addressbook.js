@@ -4,7 +4,8 @@ const contactData = {
     shared: [],
     main: [],
     leads: [
-        { name: "Ryan Haley", title: "Faculty Liaison" }
+        { name: "Ryan Haley", title: "Faculty Liaison" },
+        { name: "Emma Bernal", title: "Fundraising & Budget Coordinator"}
     ],
     usefuldrones: [
         { name: "Max Casson", title: "Web Designer" }
