@@ -1,6 +1,6 @@
 let bootText = "";
 const bootMessages = [
-    "DaemonOS 2026v1",
+    "DaemonOS 2027v1",
     "Copyright (C) DaemonCon",
     "",
     "INITIALIZING SYSTEM: STARTED",
@@ -17,7 +17,7 @@ const bootMessages = [
     "ESTABLISHING SMBv2 WITH FACULTY: SENT",
     "LOADING DAEMONCON INTERFACE: COMPLETED",
     "",
-    "SYSTEM READY. WELCOME TO DAEMONCON 2026."
+    "SYSTEM READY. WELCOME TO DAEMONCON 2027."
 ];
 
 export function typeWriter(text, i, fnCallback) {
