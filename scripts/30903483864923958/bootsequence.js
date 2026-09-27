@@ -1,6 +1,6 @@
 let bootText = "";
 const bootMessages = [
-    "DaemonOS 2027v1",
+    "DaemonOS 2027v5",
     "Copyright (C) DaemonCon",
     "",
     "INITIALIZING SYSTEM: STARTED",

@@ -4,7 +4,7 @@ let startMenuOpen = false;
 const startMenu = document.getElementById('start-menu');
 const startButton = document.getElementById('start-button');
 const bootMessages = [
-    "DaemonOS 2026v5",
+    "DaemonOS 2027v5",
     "Copyright (C) DaemonCon",
     "",
     "INITIALIZING SYSTEM: STARTED",
@@ -21,7 +21,7 @@ const bootMessages = [
     "ESTABLISHING SMBv2 WITH FACULTY: SENT",
     "LOADING DAEMONCON INTERFACE: COMPLETED",
     "",
-    "SYSTEM READY. WELCOME TO DAEMONCON 2026."
+    "SYSTEM READY. WELCOME TO DAEMONCON 2027."
 ];
 let bootText = "";
 let solitaireInitialized = false;
